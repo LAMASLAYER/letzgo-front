@@ -1,0 +1,76 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-5 col-sm-12">
+      <div class="row">
+        <div class="col-12" style="color:white; background-color: black; text-align: center">ABILITY SCORES</div>
+      </div>
+      <div class="row" style="font-size:11px; white-space: nowrap;overflow: hidden; text-align: center">
+        <div class="col-2"></div>
+        <div class="col-2">SCORE</div>
+        <div class="col-2">MODIFIER</div>
+        <div class="col-2">BONUS</div>
+        <div class="col-2">PENALTY</div>
+        <div class="col-2">TEMP</div>
+      </div>
+      <div *ngFor="let a of abilities; index as i" class="row" style="text-align: center; margin-bottom: 5px">
+        <div class="col-2" style="color:white; background-color: black; text-align: center" [matTooltip]="a.description">{{a.shortNm}} <p style="font-size:8px;margin-bottom: 2px">{{a.name}}</p></div>
+        <div class="col-2 case"><p>1</p>
+        </div>
+        <div class="col-2 case"><p>2</p></div>
+        <div class="col-2 case"><p>3</p></div>
+        <div class="col-2 case"><p>4</p></div>
+        <div class="col-2 case"></div>
+      </div>
+    </div>
+
+    <div class="col-sm-12 col-md-2">
+      <div class="row">
+        <div class="col-12" style="color:white; background-color: black; text-align: center">HIT POINTS</div>
+      </div>
+    </div>
+
+    <div style="border: 3px black solid" class="col-md-5 col-sm-12">
+      <div class="row">
+        <div class="col-12" style="color:white; background-color: black; text-align: center">BASIC INFORMATION</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <div class="row">
+        <div class="col-12" style="color:white; background-color: black; text-align: center">SKILLS</div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-sm-12" >
+          <div class="row" style="font-size:11px; white-space: nowrap;overflow: hidden; text-align: center">
+            <div class="col-2"></div>
+            <div class="col-2">TOTAL</div>
+            <div class="col-2">MODIFIER</div>
+            <div class="col-2">RANKS</div>
+            <div class="col-2">MISC</div>
+            <div class="col-2">COND</div>
+          </div>
+
+          <div *ngFor="let c of charSkills" class="row">
+            <div class="col-2">
+              <label  [matTooltip]="c.description">
+                <input [disabled]="!editMode" type="checkbox" [checked]="c.checked" [id]="c.name" [name]="c.name | titlecase">
+                {{c.name | titlecase }}
+              </label>
+            </div>
+            <div style="text-align: center" class="col-2">{{c.total}}</div><p style="margin-left: -20px">=</p>
+            <p>{{c.primaryStat}}</p>
+            <div style="text-align: center" class="col-2">{{c.modifier}}</div><p style="margin-left: -10px">+</p>
+            <div style="text-align: center" class="col-2"></div><p style="margin-left: -10px">+</p>
+            <div style="text-align: center" class="col-2"></div><p style="margin-left: -10px">+</p>
+            <div style="text-align: center" class="col-2"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<button *ngIf="!editMode" (click)="editMode = !editMode">Edit</button>
+<button *ngIf="editMode" (click)="editMode = !editMode; saveChar()">Save</button>
