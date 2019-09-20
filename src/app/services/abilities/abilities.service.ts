@@ -22,8 +22,4 @@ export class AbilitiesService {
         return res;
     });
   }
-
-  public getCharAbilities() {
-
-  }
 }

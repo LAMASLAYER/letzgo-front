@@ -28,11 +28,6 @@ export class DashboardComponent implements OnInit {
         this.abilities = res;
       }
     );
-    this.abilitiesService.getCharAbilities().subscribe(
-      (res: Array<CharAbilities>) => {
-        this.charAbilities = res;
-      }
-    );
   }
 
 
