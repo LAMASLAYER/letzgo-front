@@ -8,16 +8,19 @@ import {HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatTooltipModule} from '@angular/material';
 import 'hammerjs';
+import {HomeComponent} from "./components/home/home.component";
 
 
 const routes: Routes = [
-  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-  { path: 'dashboard', component: DashboardComponent }
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
+  { path: 'dashboard/:charId', component: DashboardComponent }
   ];
 
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent,
     DashboardComponent
   ],
   imports: [

@@ -6,4 +6,5 @@ import { Injectable } from '@angular/core';
 export class Tools {
   static SERVER = 'http://localhost:10000';
   static CHARACTER: number;
+  static PLAYER: number;
 }

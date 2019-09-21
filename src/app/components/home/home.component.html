@@ -1,0 +1,27 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="row">
+        <div class="col-12" style="color:white; background-color: black; text-align: center">CHARACTERS</div>
+      </div>
+      <div class="row" style="font-size:11px; white-space: nowrap;overflow: hidden; text-align: center">
+        <div class="col-2">Name</div>
+        <div class="col-2">Age</div>
+        <div class="col-2">Alignment</div>
+        <div class="col-2">Gender</div>
+        <div class="col-2">Height</div>
+        <div class="col-2">Weight</div>
+      </div>
+      <div *ngFor="let c of characters" class="row" style="text-align: center; margin-bottom: 5px">
+        <div class="col-2 case"><a [routerLink]="['/dashboard', c.charId]">{{c.name}}</a></div>
+        <div class="col-2 case">{{c.age}}</div>
+        <div class="col-2 case">{{c.alignment}}</div>
+        <div class="col-2 case">{{c.gender}}</div>
+        <div class="col-2 case">{{c.height}} {{c.heightUnit}}</div>
+        <div class="col-2 case">{{c.weight}} {{c.weightUnit}}</div>
+      </div>
+    </div>
+  </div>
+
+</div>
