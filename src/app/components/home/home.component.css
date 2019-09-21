@@ -1,0 +1,39 @@
+.case {
+  border-right: 1px black solid;
+  border-bottom: 1px black solid;
+  border-top: 1px black solid;
+}
+
+.case2 {
+  border: 1px black solid;
+}
+
+i {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+  cursor: pointer;
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  cursor: pointer;
+}
+
+.case>p {
+ margin-top: 4px;
+  margin-bottom: 0;
+}
+
+::ng-deep .mat-tooltip {
+  opacity: 1;
+  color:black;
+  background-color:grey;
+}
